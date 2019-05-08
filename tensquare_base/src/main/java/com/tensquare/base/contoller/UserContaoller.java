@@ -28,16 +28,12 @@ public class UserContaoller {
     @Autowired
     private LabelService labelService;
 
-    @Value("${ip}")
-    private String ip;
-
     /**
      * 查询全部列表
      * @return
      */
     @GetMapping
     public Result findAll() {
-        System.out.println("123" + ip);
         return new Result(true, StatusCode.OK, "查询成功", labelService.findAll());
     }
 
